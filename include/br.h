@@ -1,12 +1,10 @@
-//=======================================================================================
 #ifndef BR_H
 #define BR_H
-//=======================================================================================
+
 #include <iomanip>
-//=======================================================================================
+
 namespace br
 {
-//=======================================================================================
     void printBr(std::vector<std::vector<int>> br)
     {
 
@@ -33,7 +31,7 @@ namespace br
             std::cout << std::endl;
         }
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makeDeveloperBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -53,7 +51,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makeDiagonalBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -73,7 +71,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makeResolutionBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -93,7 +91,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makeMatrixBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -113,7 +111,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makeFrequencyBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -133,7 +131,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makeResponseTimeBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -153,7 +151,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makePowerConsumeBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -173,7 +171,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makePpiBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -193,7 +191,7 @@ namespace br
 
         return br;
     }
-//=======================================================================================
+
     std::vector<std::vector<int>> makePriceBr(const std::vector<Monitor> &monitors_h)
     {
         std::vector<std::vector<int>> br;
@@ -201,9 +199,9 @@ namespace br
         for (auto &m_v : monitors_v)
         {
             std::vector<int> br_row;
-            for (int i = 0; i < monitors_h.size(); ++i)
+            for (const auto & i : monitors_h)
             {
-                if (m_v.price < monitors_h[i].price)
+                if (m_v.price < i.price)
                     br_row.push_back(0);
                 else
                     br_row.push_back(1);
@@ -213,8 +211,6 @@ namespace br
 
         return br;
     }
-//=======================================================================================
 }
-//=======================================================================================
+
 #endif //BR_H
-//=======================================================================================
